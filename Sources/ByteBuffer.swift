@@ -65,11 +65,9 @@ public class ByteBuffer : CustomStringConvertible {
 
 // I assume this is horribly illegal but it seems to work!
 func cast<T>(inout ary: Array<UInt8>) -> UnsafeMutablePointer<T> {
-	var ptr: COpaquePointer = nil
-	ary.withUnsafeMutableBufferPointer { (tmp) in
-	    ptr = COpaquePointer(tmp.baseAddress)
-	}
-	return UnsafeMutablePointer<T>(ptr)
+	let ptr = UnsafeMutableBufferPointer(start: &ary, count: ary.count)
+	let opq = COpaquePointer(ptr.baseAddress)
+	return UnsafeMutablePointer<T>(opq)
 }
 
 public class ByteBufferReader {
