@@ -6,6 +6,8 @@ public class ByteBuffer : CustomStringConvertible {
 		self.data = Array<UInt8>(count: length, repeatedValue: 0)
 	}
 
+	public let length: Int
+
 	public var description: String {
 		var out : String = "<ByteBuffer"
 		for i in 0 ..< min(16, length) {
@@ -59,7 +61,6 @@ public class ByteBuffer : CustomStringConvertible {
 		return cast(&data)
 	}
 
-	public let length: Int
 	var data: Array<UInt8>
 }
 
