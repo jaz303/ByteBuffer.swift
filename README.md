@@ -30,11 +30,11 @@ Fill the buffer with zeroes.
 
 #### `buffer.dataPointerInt8() -> UnsafeMutablePointer<Int8>`
 
-Return a pointer to the head of the buffer's data array. __You are responsible for ensuring that the buffer is not destroyed while the pointer is in use.__
+Return an `Int8` pointer to the head of the buffer's data array. __You are responsible for ensuring that the buffer is not destroyed while the pointer is in use.__
 
-#### `buffer.dataPointerInt8() -> UnsafeMutablePointer<UInt8>`
+#### `buffer.dataPointerUInt8() -> UnsafeMutablePointer<UInt8>`
 
-Return a pointer to the head of the buffer's data array. __You are responsible for ensuring that the buffer is not destroyed while the pointer is in use.__
+Return a `UInt8` pointer to the head of the buffer's data array. __You are responsible for ensuring that the buffer is not destroyed while the pointer is in use.__
 
 ## `ByteBufferReader`
 
